@@ -45,7 +45,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
           <HomeModernIcon className="h-5 w-5" />
         </ItemMenu>
 
-        <ItemMenu href="/botones" pathname={router.pathname} text='Botones'>
+        <ItemMenu href="/botones" pathname={router.pathname} text='Areas'>
           <HomeModernIcon className="h-5 w-5" />
         </ItemMenu>
 
