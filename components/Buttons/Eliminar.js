@@ -8,7 +8,7 @@ const Eliminar = ({ isVisible, onClose,id }) => {
     
     const handleSubmmit = async (event)=>{
         try{
-            const res = await axios.delete('http://127.0.0.1:8000/api/areas/'+id);
+            const res = await axios.delete('http://back-proyecto.test/api/areas/'+id);
             onClose();
             Swal.fire({
                 icon:'success',

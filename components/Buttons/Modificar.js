@@ -16,7 +16,7 @@ const Modificar = ({ isVisible, onClose, id, area, description }) => {
         console.log("payload: ", Payload)
         try{
             const { data } = await axios({
-                url:"http://127.0.0.1:8000/api/areas/"+id,
+                url:"http://back-proyecto.test/api/areas/"+id,
                 method:"PUT",
                 data: Payload
             });

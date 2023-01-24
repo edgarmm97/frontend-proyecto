@@ -4,7 +4,7 @@ import Modal from '../components/Buttons/Modal';
 import Eliminar from '../components/Buttons/Eliminar';
 import Modificar from '../components/Buttons/Modificar';
 
-const defaultEndpoint = 'http://127.0.0.1:8000/api/areas/';
+const defaultEndpoint = 'http://back-proyecto.test/api/areas';
 
 export async function getServerSideProps(){
     const res = await fetch(defaultEndpoint);
