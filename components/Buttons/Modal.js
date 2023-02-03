@@ -2,10 +2,11 @@ import React, { useState,useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const Modal = ({ isVisible, onClose }) => {
+const Modal = ({ isVisible, onClose,id }) => {
     if (!isVisible) return null;
     const [area,setArea]= useState(" ");
     const [description, setDescription]=useState("");
+    console.log(id);
 
 
     
