@@ -49,6 +49,10 @@ const SideBar = forwardRef(({ showNav }, ref) => {
           <HomeModernIcon className="h-5 w-5" />
         </ItemMenu>
 
+        <ItemMenu href="/tabla" pathname={router.pathname} text='Tabla'>
+          <HomeModernIcon className="h-5 w-5" />
+        </ItemMenu>
+
       </div>
     </div>
   );

@@ -3,6 +3,8 @@ import React, { Fragment, useEffect, useState } from 'react';
 import Modal from '../components/Buttons/Modal';
 import Eliminar from '../components/Buttons/Eliminar';
 import Modificar from '../components/Buttons/Modificar';
+import { useRouter } from "next/router";
+
 
 const defaultEndpoint = 'http://back-proyecto.test/api/areas';
 
@@ -17,8 +19,10 @@ export async function getServerSideProps(){
     }
 }
  function Botones({data}) {
+    const router = useRouter();
     const {areas = []}= data;
     console.log(data);
+    
     const [showModal, setShowModal] = useState(false);
     const [showModal2, setShowModal2] = useState(false);
     const [showModal3, setShowModal3] = useState(false);
@@ -36,6 +40,12 @@ export async function getServerSideProps(){
         setArea(area);
         setDescription(description);
     }
+    const handleClick = (id) => {
+        router.push({
+          pathname: '/tabla',
+          query: { id }
+        });
+      };
 
     return (
         <Fragment>            
@@ -66,7 +76,8 @@ export async function getServerSideProps(){
                                         <tr class="hover:bg-gray-50" id={id}>
                                     <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
                                         <div class="text-sm" >                                      
-                                            <div class="font-medium text-gray-700">{area}</div>
+                                            <div class="font-medium text-gray-700" >
+                                            <a href="#" onClick={() => handleClick(id)}>{area}</a></div>
                                         </div>
                                     </th>
                                     <td class="px-6 py-4">{description}</td>
