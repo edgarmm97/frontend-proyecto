@@ -19,7 +19,7 @@ const Modal = ({ isVisible, onClose }) => {
         console.log("payload: ", Payload)
         try{
             const { data } = await axios({
-                url:"http://127.0.0.1:8000/api/areas",
+                url:"http://back-proyecto.test/api/areas",
                 method:"POST",
                 data: Payload
             });
@@ -35,6 +35,7 @@ const Modal = ({ isVisible, onClose }) => {
                 }
               });
         }catch(error){
+            console.log(error);
             Swal.fire({
                 icon:'error',
                 title:'Alerta',
